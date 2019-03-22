@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @template.title
+p
+  strong Content:
+  = @template.content
+
+= link_to 'Edit', edit_template_path(@template)
+'  |
+= link_to 'Back', templates_path

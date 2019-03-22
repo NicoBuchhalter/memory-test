@@ -1,0 +1,25 @@
+.text-center
+  p#notice = notice
+
+  h3 = "Errors: #{@test.error_indexes.count}"
+
+  h3
+    | Template
+  p = @test.template.content
+
+  h3
+    | Evaluation
+  p
+    - @test.evaluation.split.each_with_index do |word, index|
+      - if @test.error_indexes.include? index
+        span.text-danger = word + " "
+      - else
+        span.text-success = word + " "
+
+
+
+
+  p
+
+  br
+  = link_to 'Back', root_path

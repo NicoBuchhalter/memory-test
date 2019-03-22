@@ -1,0 +1,15 @@
+= form_for @test do |f|
+  - if @test.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@test.errors.count, "error")} prohibited this test from being saved:"
+      ul
+        - @test.errors.full_messages.each do |message|
+          li = message
+  .form-group
+      = f.label :template
+      = f.collection_select :template_id, @templates, :id, :title, {}, {class: 'form-control'}
+      br
+      = f.label :evaluation
+      = f.text_area :evaluation, class: 'form-control'
+      br
+      .actions = f.submit
