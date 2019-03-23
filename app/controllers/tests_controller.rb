@@ -19,6 +19,7 @@ class TestsController < InheritedResources::Base
 
   def show
     @test = Test.find(params[:id])
+    @differ = Differ.diff_by_word(@test.template.content, @test.evaluation)
     render :show
   end
 

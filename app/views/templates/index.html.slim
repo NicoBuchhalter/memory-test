@@ -1,17 +1,19 @@
 h1 Listing templates
 
-table
-  thead
+table.table.table-hover
+  thead.thead-dark
     tr
-      th Title
-      th Content
-      th
-      th
-      th
+      th scope="col" #
+      th scope="col" Title
+      th scope="col" Content
+      th scope="col"
+      th scope="col"
+      th scope="col"
 
   tbody
     - @templates.each do |template|
       tr
+        th scope="row" = template.id
         td = template.title
         td = template.content
         td = link_to 'Show', template
@@ -21,3 +23,5 @@ table
 br
 
 = link_to 'New Template', new_template_path
+'  |
+= link_to 'Back', root_path

@@ -1,12 +1,19 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @template.title
-p
-  strong Content:
+- if notice.present?
+  .row
+    p#notice.alert.alert-info = notice
+.row
+  h3
+    | Title
+.row
+  strong = @template.title.titleize
+.row
+  h3
+    | Content
+.row
   = @template.content
 
-= link_to 'Edit', edit_template_path(@template)
-'  |
-= link_to 'Back', templates_path
+br
+.row
+  = link_to 'Edit', edit_template_path(@template)
+  '  |
+  = link_to 'Back', root_path

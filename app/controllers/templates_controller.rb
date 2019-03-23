@@ -6,4 +6,3 @@ class TemplatesController < InheritedResources::Base
       params.require(:template).permit(:title, :content)
     end
 end
-

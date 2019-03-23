@@ -3,11 +3,13 @@
   .row
     h1 Test your Memory!
   .row
-    h3 You can create your own templates or use pre-created ones.
+    h3 You can create new templates or start evaluating yourself!
   br
   br
   .row
     .col-md-2
       = link_to 'New Template', new_template_path, class: 'btn btn-primary'
     .col-md-2
-      = link_to 'Existing Templates', new_test_path, class: 'btn btn-primary'
+      = link_to 'Start Test!', new_test_path, class: 'btn btn-success'
+    .col-md-2
+      = link_to 'View Existing Templates', templates_path, class: 'btn btn-info'
